@@ -7,6 +7,25 @@ DOCTYPE html
                 <meta name="description" content="Mozzi : sound synthesis library for Arduino, Applications : sonification, media art, performance, installation, electronic art, creative art, interactive art, Software: open source, extendable, free, Audience: artists, scientists, teachers, learners, students, hobby, do it yourself, diy, makers, creators, musicians, engineers, collaborators"/>
                 <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
                 <title>Mozzi sound synthesis library for Arduino</title>
+                <script type="text/javascript">
+
+                        var _gaq = _gaq || [];
+
+                        _gaq.push(['_setAccount', 'UA-32577259-1']);
+
+                        _gaq.push(['_trackPageview']);
+
+
+                        (function() {
+
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+                        })();
+                </script>
         </head>
 
         <body>
@@ -107,7 +126,7 @@ DOCTYPE html
                                         <li>
                                                 Example sketches for easy modification.
                                         </li>
-                                         <li>
+                                        <li>
                                                 Readymade wavetables and a script to convert your own soundfiles for Mozzi.
                                         </li>
                                 </ul>
@@ -118,7 +137,7 @@ DOCTYPE html
                                 </h4>
 
                                 <p>
-                                        Download Mozzi and unzip it. It will probably have a name like "sensorium-Mozzi-2bee818".  Rename the unzipped folder "Mozzi".  Then, following the instructions from the <a href="http://arduino.cc/en/Reference/Libraries">Arduino libraries page:</a>
+                                        Download Mozzi and unzip it. It will probably have a name like "sensorium-Mozzi-2bee818". Rename the unzipped folder "Mozzi". Then, following the instructions from the <a href="http://arduino.cc/en/Reference/Libraries">Arduino libraries page:</a>
                                         <br/>
                                         Open your Arduino sketchbook folder. If there is already a folder there called libraries, place the library folder in there. If not, create a folder called libraries in the sketchbook folder, and drop the library folder in there. Then re-start the Arduino programming environment, and you should see your new library in the Sketch > Import Library menu.
                                         <br/>
@@ -129,7 +148,7 @@ DOCTYPE html
                                 </h4>
 
                                 <p>
-                                        To hear Mozzi, connect a 3.5mm audio jack with the centre wire to the PWM output on Digital pin 9 on Arduino, and the black ground to the Ground on the Arduino.  Use this as a line out which you can plug into your computer and listen to with a sound program like <a href="http://audacity.sourceforge.net/">Audacity.</a>  Try some examples. They are in your File > Examples > Mozzi menu.
+                                        To hear Mozzi, connect a 3.5mm audio jack with the centre wire to the PWM output on Digital pin 9 on Arduino, and the black ground to the Ground on the Arduino. Use this as a line out which you can plug into your computer and listen to with a sound program like <a href="http://audacity.sourceforge.net/">Audacity.</a>Try some examples. They are in your File > Examples > Mozzi menu.
                                 </p>
 
                                 <h4>
@@ -141,8 +160,7 @@ DOCTYPE html
                                 </p>
 
                                 <textarea rows="21" cols="75">
-
-#include &ltMozziGuts.h&gt 	// at the top of your sketch
+                                #include &ltMozziGuts.h&gt 	// at the top of your sketch
 #define CONTROL_RATE 64 	// or some other power of 2
 
 void setup() {
@@ -161,42 +179,40 @@ int updateAudio() {
 void updateControl() {
 	// your control code
 }
-
                                 </textarea>
+                                <h4>
+                                        Documentation
+                                </h4>
 
-                        <h4>
-                                Documentation
-                        </h4>
+                                <p>
+                                        There's <a href="doc/html/index.html">Mozzi documentation online</a>and in the doc folder in the Mozzi download.
+                                        <br/>
+                                        There are <a href="https://github.com/sensorium/Mozzi/wiki/Hints-and-Tips">hints and tips</a>and more help on the <a href="https://github.com/sensorium/Mozzi/wiki/_pages">Mozzi wiki.</a>
+                                        <br/>
+                                        Also, feel free to <a href="https://github.com/sensorium/Mozzi/issues">submit any issues.</a>
+                                        <br/>
+                                        How about <a href="https://github.com/sensorium/Mozzi/wiki/Code-Snippets-to-Share">sharing Mozzi code </a>snippets?
+                                </p>
 
-                        <p>
-                                There's <a href="doc/html/index.html">Mozzi documentation online</a> and in the doc folder in the Mozzi download.
+                                <h4>
+                                        Caveats
+                                </h4>
+
+                                <ul>
+                                        <li>
+                                                This code has been tested on Arduino Dumemilanove ATmega328. Feedback about performance on other Arduinos welcome.
+                                        </li>
+                                        <li>
+                                                Mozzi doesn't play nice with Arduino time functions millis(), micros(), delay(), delayMicroseconds(). Instead, you can use Mozzi's EventDelay() for scheduling.
+                                        </li>
+                                </ul>
+
+                                <h4>
+                                        Contributions / Included Dependencies
+                                </h4>
+                                TimerOne library - <a href="http://code.google.com/p/arduino-timerone/">http://code.google.com/p/arduino-timerone/</a>
                                 <br/>
-                                There are <a href="https://github.com/sensorium/Mozzi/wiki/Hints-and-Tips">hints and tips</a> and more help on the <a href="https://github.com/sensorium/Mozzi/wiki/_pages">Mozzi wiki.</a>
-                                <br/>
-                                Also, feel free to <a href="https://github.com/sensorium/Mozzi/issues">submit any issues.</a>
-                                <br/>
-                                How about <a href="https://github.com/sensorium/Mozzi/wiki/Code-Snippets-to-Share">sharing Mozzi code </a>snippets?
-                        </p>
-
-                        <h4>
-                                Caveats
-                        </h4>
-
-                        <ul>
-                                <li>
-                                        This code has been tested on Arduino Dumemilanove ATmega328. Feedback about performance on other Arduinos welcome.
-                                </li>
-                                <li>
-                                        Mozzi doesn't play nice with Arduino time functions millis(), micros(), delay(), delayMicroseconds(). Instead, you can use Mozzi's EventDelay() for scheduling.
-                                </li>
-                        </ul>
-
-                        <h4>
-                                Contributions / Included Dependencies
-                        </h4>
-                        TimerOne library - <a href="http://code.google.com/p/arduino-timerone/">http://code.google.com/p/arduino-timerone/</a>
-                        <br/>
-                        TimerTwo library - <a href="https://bitbucket.org/johnmccombs">https://bitbucket.org/johnmccombs</a>
+                                TimerTwo library - <a href="https://bitbucket.org/johnmccombs">https://bitbucket.org/johnmccombs</a>
                         </p>
 
                         </p>
